@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="An interactive high-school guide to the Declaration of Independence, its historical context, key ideas, and legacy.">
+<title>The Declaration of Independence | Student Guide</title>
+<style>
+:root{--navy:#142b45;--blue:#245b83;--red:#a63b3b;--cream:#fbf7ef;--gold:#d9b66f;--ink:#202a35;--muted:#536273;--paper:#fffdf8;--line:#e4ded2;--green:#246b55}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font:17px/1.65 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+a{color:#155b91}a:focus,button:focus,input:focus{outline:3px solid #e0ad42;outline-offset:3px}
+.skip{position:absolute;left:-9999px;top:auto}.skip:focus{left:1rem;top:1rem;background:white;padding:.6rem;z-index:10}
+header{background:linear-gradient(120deg,#10263e,#1f5277);color:white;position:relative;overflow:hidden}
+nav{max-width:1120px;margin:auto;padding:1rem 1.2rem;display:flex;gap:1rem;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.brand{font-weight:800;letter-spacing:.04em}.navlinks{display:flex;gap:.9rem;flex-wrap:wrap}.navlinks a{color:#fff;text-decoration:none;font-size:.92rem}.navlinks a:hover{text-decoration:underline}
+.hero{max-width:1120px;margin:auto;padding:4.2rem 1.2rem 4.5rem;display:grid;grid-template-columns:1.2fr .8fr;gap:2rem;align-items:center}
+.kicker{text-transform:uppercase;letter-spacing:.15em;font-size:.78rem;font-weight:800;color:#f1d28d}
+h1{font-size:clamp(2.5rem,6vw,4.8rem);line-height:1.02;margin:.6rem 0 1rem;letter-spacing:-.04em}
+.hero p{font-size:1.15rem;max-width:650px;color:#e6edf4}
+.btn{display:inline-block;background:var(--gold);color:#172a3d;font-weight:800;text-decoration:none;border:0;border-radius:999px;padding:.75rem 1.1rem;margin:.4rem .4rem .2rem 0;cursor:pointer;font-size:1rem}.btn.secondary{background:transparent;color:white;border:1px solid #b9cad8}
+.hero-art{width:100%;max-width:430px;justify-self:center;filter:drop-shadow(0 20px 22px #081c2a66)}
+main{max-width:1000px;margin:auto;padding:2rem 1.2rem 4rem}
+section{scroll-margin-top:1rem;margin:2rem 0 3.5rem}
+.section-label{color:var(--red);font-size:.78rem;text-transform:uppercase;letter-spacing:.15em;font-weight:900}
+h2{font-size:clamp(1.8rem,4vw,2.7rem);line-height:1.15;color:var(--navy);margin:.3rem 0 1rem}
+h3{color:var(--navy);line-height:1.25;margin:.3rem 0 .6rem}
+.lead{font-size:1.12rem;color:#3f4e5d;max-width:800px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1.4rem}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:1.25rem;box-shadow:0 5px 15px #24394a0b}
+.card .icon{font-size:1.8rem}.card p{margin:.4rem 0 0}
+.callout{border-left:5px solid var(--gold);background:#f3ead7;padding:1rem 1.2rem;border-radius:0 12px 12px 0;margin:1.3rem 0}
+.timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:.8rem;margin-top:1.3rem}
+.time{border-top:4px solid var(--blue);background:white;padding:1rem;border-radius:0 0 12px 12px;border:1px solid var(--line);border-top:4px solid var(--blue)}
+.time strong{display:block;color:var(--red);font-size:1.05rem}
+.quote{background:var(--navy);color:white;padding:1.6rem;border-radius:16px;margin:1.3rem 0}
+.quote blockquote{font-family:Georgia,serif;font-size:clamp(1.3rem,3vw,2rem);line-height:1.4;margin:0 0 .8rem}
+.quote p{margin:0;color:#dbe5ef}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+details{background:white;border:1px solid var(--line);border-radius:12px;padding:.9rem 1rem;margin:.7rem 0}
+summary{font-weight:800;color:var(--navy);cursor:pointer}
+.tag{display:inline-block;font-size:.78rem;font-weight:800;letter-spacing:.04em;text-transform:uppercase;background:#e9eef3;color:var(--navy);padding:.2rem .55rem;border-radius:6px}
+.activity{background:white;border:1px solid var(--line);border-radius:18px;padding:1.4rem;margin:1rem 0}
+.question{padding:1rem 0;border-bottom:1px solid var(--line)}.question:last-child{border-bottom:0}
+.question p{font-weight:750;margin:.1rem 0 .6rem}.answers{display:grid;gap:.45rem}
+.answers label{display:block;padding:.6rem .75rem;border:1px solid #d7dee5;border-radius:9px;cursor:pointer}
+.answers label:hover{background:#f2f6f9}
+button{font:inherit}.result{font-weight:800;margin-top:1rem;padding:.8rem 1rem;border-radius:10px;background:#eef3f6}
+.result.good{background:#e1f3e9;color:#17533d}.result.try{background:#fff0d4;color:#704c0c}
+textarea{width:100%;min-height:120px;border:1px solid #c9d2dc;border-radius:10px;padding:.8rem;font:inherit}
+.small{font-size:.9rem;color:var(--muted)}.sources li{margin:.45rem 0}
+footer{background:#10263e;color:#e8eef5;padding:2rem 1.2rem}footer .inner{max-width:1000px;margin:auto}footer a{color:#f2d28d}
+@media(max-width:760px){.hero{grid-template-columns:1fr;padding-top:2.8rem}.hero-art{max-width:300px;grid-row:1}.cards{grid-template-columns:1fr}.timeline{grid-template-columns:1fr 1fr}.grid2{grid-template-columns:1fr}.navlinks{gap:.55rem}.navlinks a{font-size:.85rem}}
+@media(max-width:420px){.timeline{grid-template-columns:1fr}}
+@media print{nav,.btn,.activity button{display:none!important}body{background:white;font-size:12pt}.hero{display:block;padding:1rem}.hero-art{max-width:180px}header{background:white;color:black}header .hero p{color:#222}section{break-inside:avoid}.card,.activity{box-shadow:none}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header>
+  <nav aria-label="Main navigation">
+    <div class="brand">HISTORY LAB <span style="color:#f1d28d">/ 1776</span></div>
+    <div class="navlinks">
+      <a href="#context">Context</a><a href="#ideas">Key ideas</a><a href="#timeline">Timeline</a><a href="#activity">Check your learning</a>
+    </div>
+  </nav>
+  <div class="hero">
+    <div>
+      <div class="kicker">A student guide to a founding document</div>
+      <h1>The Declaration<br>of Independence</h1>
+      <p>Why did thirteen colonies decide to break away from Great Britain—and what ideas did they use to explain their decision?</p>
+      <a class="btn" href="#context">Explore the story ↓</a>
+      <a class="btn secondary" href="#activity">Try the quick quiz</a>
+    </div>
+    <svg class="hero-art" viewBox="0 0 420 390" role="img" aria-label="Illustration of an antique parchment document with a quill and stars">
+      <defs><linearGradient id="paper" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff4d6"/><stop offset="1" stop-color="#d8bb7d"/></linearGradient></defs>
+      <circle cx="215" cy="190" r="170" fill="#ffffff" opacity=".08"/>
+      <path d="M75 55 Q98 39 120 53 L326 53 Q345 51 347 73 L347 302 Q335 321 316 311 L98 326 Q77 327 77 304 Z" fill="#071a2a" opacity=".28" transform="translate(9 10)"/>
+      <path d="M75 55 Q98 39 120 53 L326 53 Q345 51 347 73 L347 302 Q335 321 316 311 L98 326 Q77 327 77 304 Z" fill="url(#paper)" stroke="#c5a15c" stroke-width="3"/>
+      <path d="M104 90 H316 M104 108 H300 M104 126 H312 M104 144 H292 M104 162 H310 M104 180 H300 M104 198 H312 M104 216 H287 M104 234 H307 M104 252 H295 M104 270 H310" stroke="#92784c" stroke-width="3" opacity=".55"/>
+      <text x="210" y="78" text-anchor="middle" fill="#5b4227" font-family="Georgia,serif" font-size="13" font-weight="bold">IN CONGRESS</text>
+      <path d="M294 300 Q349 230 364 135 Q369 106 354 84 Q337 109 336 143 Q329 219 294 300Z" fill="#f7f1e6" stroke="#d9b66f" stroke-width="2"/>
+      <path d="M294 300 Q335 199 354 84" stroke="#a63b3b" stroke-width="3" fill="none"/>
+      <path d="M294 300 Q264 315 250 339 Q285 336 294 300Z" fill="#a63b3b"/>
+      <g fill="#f1d28d"><path d="M63 140 l5 13 14 1-11 9 3 14-11-8-12 8 4-14-11-9 14-1z"/><path d="M349 42 l4 10 11 1-9 7 3 11-9-6-9 6 3-11-9-7 11-1z"/><path d="M60 255 l4 10 11 1-9 7 3 11-9-6-9 6 3-11-9-7 11-1z"/></g>
+    </svg>
+  </div>
+</header>
+
+<main id="main">
+<section id="context">
+  <div class="section-label">01 / The background</div>
+  <h2>How did a protest become a revolution?</h2>
+  <p class="lead">By 1776, tensions between Great Britain and its thirteen North American colonies had grown into a war. The Declaration explained why many Patriot leaders believed independence was necessary.</p>
+  <div class="cards">
+    <article class="card"><div class="icon" aria-hidden="true">⚖️</div><h3>Arguments over power</h3><p>Parliament claimed authority to tax and regulate the colonies. Many colonists argued that their elected assemblies—not a Parliament where they had no representatives—should have a say in colonial taxes.</p></article>
+    <article class="card"><div class="icon" aria-hidden="true">🫖</div><h3>Protest and resistance</h3><p>Events such as the Boston Tea Party in 1773 and Britain's Coercive Acts deepened the conflict. Boycotts, petitions, and political organizing spread.</p></article>
+    <article class="card"><div class="icon" aria-hidden="true">🪖</div><h3>War begins</h3><p>Fighting at Lexington and Concord in April 1775 began the Revolutionary War. By 1776, independence was increasingly debated across the colonies.</p></article>
+  </div>
+  <div class="callout"><strong>Think about it:</strong> A disagreement over specific policies became a debate about political authority itself: Who should govern, and what makes a government legitimate?</div>
+</section>
+
+<section id="timeline">
+  <div class="section-label">02 / Key moments</div>
+  <h2>From debate to declaration</h2>
+  <p class="lead">The Declaration was one important step in a longer political and military process.</p>
+  <div class="timeline">
+    <div class="time"><strong>April 1775</strong>Fighting begins at Lexington and Concord.</div>
+    <div class="time"><strong>June 1776</strong>A committee of five is appointed to prepare a declaration. Thomas Jefferson drafts the initial text.</div>
+    <div class="time"><strong>July 2–4, 1776</strong>Congress approves independence on July 2 and adopts the Declaration's final text on July 4.</div>
+    <div class="time"><strong>August 2, 1776</strong>Delegates begin signing the engrossed parchment copy; additional signatures follow.</div>
+  </div>
+  <p class="small">Historical note: July 4 is the date Congress adopted the Declaration. The famous parchment copy was signed by delegates over time, beginning on August 2.</p>
+</section>
+
+<section id="ideas">
+  <div class="section-label">03 / Read the ideas</div>
+  <h2>What does the Declaration argue?</h2>
+  <p class="lead">The document has several main jobs: explain political principles, list complaints against King George III, and announce that the colonies are independent states.</p>
+  <div class="quote">
+    <blockquote>“We hold these truths to be self-evident, that all men are created equal…”</blockquote>
+    <p>Declaration of Independence, 1776 — opening of the statement of principles</p>
+  </div>
+  <details open><summary>Natural rights</summary><p>Rights understood as belonging to people by nature, rather than being gifts from a ruler. The Declaration names “Life, Liberty and the pursuit of Happiness.”</p></details>
+  <details><summary>Consent of the governed</summary><p>Government gets its legitimate power from the people it governs. In this view, political authority is not simply the ruler's personal possession.</p></details>
+  <details><summary>The right to change government</summary><p>If a government repeatedly violates people's rights and fails its purpose, the Declaration argues that people may alter or abolish it and create a new government.</p></details>
+  <details><summary>Grievances against the king</summary><p>The document lists complaints about the Crown's actions, including taxation without consent, interference with colonial self-government, and the use of military force.</p></details>
+  <details><summary>A declaration of independence</summary><p>The final section states that the colonies are—and ought to be—free and independent states, no longer politically connected to the British Crown.</p></details>
+  <div class="callout"><strong>Historical perspective:</strong> The Declaration's claim that “all men are created equal” expressed an influential ideal, but equality was not applied equally in 1776. Slavery continued, women lacked equal political rights, and Indigenous peoples faced dispossession. The gap between the ideal and reality became a major issue in later American history.</div>
+</section>
+
+<section id="people">
+  <div class="section-label">04 / People and process</div>
+  <h2>Who created the document?</h2>
+  <div class="grid2">
+    <div class="card"><h3>The Committee of Five</h3><p>Thomas Jefferson, John Adams, Benjamin Franklin, Roger Sherman, and Robert R. Livingston were appointed to draft a declaration. Jefferson wrote the initial draft; Congress debated and revised it.</p></div>
+    <div class="card"><h3>The Continental Congress</h3><p>Delegates representing the colonies debated independence and approved the final declaration. John Hancock, president of Congress, signed the parchment prominently; 56 delegates eventually signed it.</p></div>
+  </div>
+  <p class="small">The Declaration was not a constitution. It announced independence and explained the reasons and principles behind it; the U.S. Constitution, written later, established the structure of the federal government.</p>
+</section>
+
+<section id="activity">
+  <div class="section-label">05 / Check your learning</div>
+  <h2>Quick knowledge check</h2>
+  <p class="lead">Choose one answer for each question, then select “Check answers.” This activity runs in your browser; your answers are not sent anywhere.</p>
+  <div class="activity">
+    <form id="quiz">
+      <div class="question"><p>1. What did the Continental Congress do on July 4, 1776?</p><div class="answers">
+        <label><input type="radio" name="q1" value="a"> Declared the Revolutionary War over</label>
+        <label><input type="radio" name="q1" value="b"> Adopted the final text of the Declaration of Independence</label>
+        <label><input type="radio" name="q1" value="c"> Ratified the U.S. Constitution</label>
+      </div></div>
+      <div class="question"><p>2. What does “consent of the governed” mean?</p><div class="answers">
+        <label><input type="radio" name="q2" value="a"> Government's authority comes from the people</label>
+        <label><input type="radio" name="q2" value="b"> A king has unlimited power</label>
+        <label><input type="radio" name="q2" value="c"> Only wealthy people can vote</label>
+      </div></div>
+      <div class="question"><p>3. Which statement best describes the Declaration's relationship to the Constitution?</p><div class="answers">
+        <label><input type="radio" name="q3" value="a"> They are the same document</label>
+        <label><input type="radio" name="q3" value="b"> The Declaration established today's three branches of government</label>
+        <label><input type="radio" name="q3" value="c"> The Declaration announced independence; the Constitution later established the federal government's framework</label>
+      </div></div>
+      <div class="question"><p>4. Which is an important historical limitation of the Declaration's equality ideal?</p><div class="answers">
+        <label><input type="radio" name="q4" value="a"> The colonies were already independent before 1776</label>
+        <label><input type="radio" name="q4" value="b"> Slavery continued and many groups lacked equal rights</label>
+        <label><input type="radio" name="q4" value="c"> Congress did not debate the document</label>
+      </div></div>
+      <button type="button" class="btn" id="check">Check answers</button>
+      <button type="reset" class="btn" style="background:#e7ebef">Try again</button>
+      <div id="result" class="result" aria-live="polite">Your score will appear here.</div>
+    </form>
+  </div>
+  <div class="activity">
+    <span class="tag">Short response</span>
+    <h3>Make a claim using evidence</h3>
+    <p>In 3–5 sentences, explain one argument the Declaration makes for independence. Use a specific idea from the document, then explain why it mattered in 1776.</p>
+    <label for="response"><strong>Your response (optional writing space)</strong></label>
+    <textarea id="response" placeholder="The Declaration argues that… This mattered because…"></textarea>
+    <p class="small">Your writing stays in this page while it is open. Copy it elsewhere if you want to save it.</p>
+    <button class="btn" type="button" id="copyResponse">Select response text</button>
+    <span id="copyMessage" class="small" aria-live="polite"></span>
+  </div>
+</section>
+
+<section id="further">
+  <div class="section-label">06 / Explore primary sources</div>
+  <h2>Go straight to the historical record</h2>
+  <p class="lead">Use these authoritative resources to view the document, read the full transcript, and explore additional context.</p>
+  <ul class="sources">
+    <li><a href="https://www.archives.gov/milestone-documents/declaration-of-independence" target="_blank" rel="noopener">National Archives: Declaration of Independence (1776)</a> — document history and transcript.</li>
+    <li><a href="https://www.archives.gov/founding-docs/declaration-transcript" target="_blank" rel="noopener">National Archives: Full transcription</a> — read the document's complete text.</li>
+    <li><a href="https://www.archives.gov/founding-docs" target="_blank" rel="noopener">America's Founding Documents</a> — compare the Declaration, Constitution, and Bill of Rights.</li>
+  </ul>
+  <p class="small">Design note: This page uses original vector illustrations and CSS rather than copied archive photographs, so its visuals are built into the file. The links above lead to official archival images and primary-source material.</p>
+</section>
+</main>
+<footer><div class="inner">
+  <strong>History Lab / The Declaration of Independence</strong>
+  <p>A classroom learning resource for high-school students. Prepared as a modern educational replacement page; not affiliated with the original Congress for Kids website.</p>
+  <p class="small" style="color:#d6e0e9">Content reviewed for basic historical accuracy against the U.S. National Archives. Always consult primary sources for close analysis.</p>
+  <a href="#main">Back to top ↑</a>
+</div></footer>
+<script>
+const answers={q1:"b",q2:"a",q3:"c",q4:"b"};
+document.getElementById("check").addEventListener("click",()=>{
+ let score=0,answered=0;
+ for(const [q,a] of Object.entries(answers)){
+  const picked=document.querySelector('input[name="'+q+'"]:checked');
+  if(picked){answered++;if(picked.value===a)score++;}
+ }
+ const box=document.getElementById("result");
+ if(answered<4){box.className="result try";box.textContent="You answered "+answered+" of 4 questions. Complete all four to see your score.";return;}
+ box.className="result "+(score===4?"good":"try");
+ box.textContent="You scored "+score+" out of 4. "+(score===4?"Excellent work—you understand the core ideas.":"Review the sections above, then try again.");
+});
+document.querySelector("#quiz").addEventListener("reset",()=>{
+ setTimeout(()=>{const box=document.getElementById("result");box.className="result";box.textContent="Your score will appear here.";},0);
+});
+document.getElementById("copyResponse").addEventListener("click",()=>{
+ const area=document.getElementById("response");area.focus();area.select();
+ document.getElementById("copyMessage").textContent="Response text selected. Use Ctrl+C (Windows/Chromebook) or Command+C (Mac) to copy.";
+});
+</script>
+</body>
+</html>
